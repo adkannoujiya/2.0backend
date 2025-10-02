@@ -12,6 +12,7 @@ dotenv.config();
 export const checkoutController = async(req, res) =>{
 
   try {
+      console.log("Checkout hit ");
     const {amount, cart} = req.body;
     console.log("amount is :",amount);
 
@@ -20,7 +21,9 @@ export const checkoutController = async(req, res) =>{
   currency: "INR",
 
 };
+       console.log("Creating Razorpay order...");
 const order = await instance.orders.create(options);
+     console.log("Order created:", order);
 
 console.log(order);
 
@@ -30,6 +33,7 @@ res.status(200).json({
 })
     
   } catch (error) {
+      console.error("Checkout error:", error);
        console.log(error)
 
     res.status(500).send({
