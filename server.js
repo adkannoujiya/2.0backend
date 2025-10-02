@@ -32,7 +32,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, '../clint/dist')))
+// app.use(express.static(path.join(__dirname, '../clint/dist')))
 
 //routes
 app.use('/api/v1/auth',authRoute );
@@ -40,9 +40,9 @@ app.use('/api/v1/category',categoryRoute );
 app.use('/api/v1/product',productRoute );
 app.use('/api',paymentRoute );
 
-app.use('*', function(req, res){
-  res.sendFile(path.resolve(__dirname,'..', 'clint','dist','index.html'))
-})
+// app.use('*', function(req, res){
+//   res.sendFile(path.resolve(__dirname,'..', 'clint','dist','index.html'))
+// })
 
 
 //for getting key
