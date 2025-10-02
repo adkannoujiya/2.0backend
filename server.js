@@ -25,10 +25,21 @@ const __dirname = path.dirname(__filename);
 //database confic
 connectDB();
 //middleware
+// app.use(cors({
+//   origin: 'http://localhost:5173',
+//   credentials: true,
+// }));
+
+
 app.use(cors({
-  origin: 'http://localhost:5173',
-  credentials: true,
+  origin: [
+    "http://localhost:5173", 
+    "https://frontend-nine-eta-39.vercel.app" 
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
