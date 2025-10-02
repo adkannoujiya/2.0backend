@@ -43,7 +43,8 @@ app.use(cors({
 app.options("*", cors({
   origin: [
     "http://localhost:5173",
-    "https://frontend-nine-eta-39.vercel.app"
+    "https://frontend-nine-eta-39.vercel.app",
+    "https://adshop.vercel.app"
   ],
   credentials: true,
   methods: ["GET","POST","PUT","DELETE","OPTIONS"]
